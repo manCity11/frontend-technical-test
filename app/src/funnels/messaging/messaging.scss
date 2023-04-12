@@ -1,0 +1,16 @@
+@import "../../commons/ui-kit/styles/constants";
+
+.messaging {
+  &__user-select-container {
+    @include background("red", "persimon");
+
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding: 10px;
+  }
+
+  &__user-title {
+    text-transform: capitalize;
+  }
+}

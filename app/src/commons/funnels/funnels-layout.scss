@@ -1,0 +1,46 @@
+@import "../ui-kit/styles/constants";
+
+.funnels-layout {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 1rem;
+  }
+
+  &__title {
+    font-weight: normal;
+    margin-bottom: .5rem;
+  }
+
+  &__subtitle {
+    border-bottom: 1px solid getColor("grey", "athensGray");
+    color: getColor("grey", "dove");
+    font-weight: normal;
+    margin-top: 0;
+    padding-bottom: 1.5rem;
+  }
+
+  &__button {
+    @include background("white");
+    @include color("grey", "bright");
+
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    box-shadow: getColor("black") 0 0 0 0, getColor("black") 0 0 0 0, #0000001f 0 1px 1px 0, #0000001f 0 0 0 1px, getColor("black") 0 0 0 0, getColor("black") 0 0 0 0, getColor("grey", "bright")14 0 2px 5px 0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 8px;
+    display: inline-block;
+    min-height: 28px;
+    transition: background-color .24s ease 0s, box-shadow .24s ease 0s;
+
+    &.primary {
+      @include color("white");
+      @include background("red", "persimon");
+    }
+  }
+}

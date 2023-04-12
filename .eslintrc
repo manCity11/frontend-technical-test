@@ -1,3 +1,21 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "next",
+    "next/core-web-vitals"
+  ],
+  "globals": {
+    "jest": true,
+    "require": true,
+    "exports": true,
+    "module": true,
+    "describe": true
+  },
+  "rules": {
+    
+  }
 }
