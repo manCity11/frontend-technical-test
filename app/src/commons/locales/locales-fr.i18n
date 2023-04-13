@@ -1,0 +1,10 @@
+{
+  "globals": {
+    "yes": "oui",
+    "no": "no",
+    "user": "utilisateur",
+    "delete": "supprimer",
+    "see": "voir",
+    "send": "envoyer"
+  }
+}

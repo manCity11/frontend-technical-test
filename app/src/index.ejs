@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css.find((css) => /style/.test(css))%>" />
+    <base href="/">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/javascript">
+      <% htmlWebpackPlugin.options.inlinedEntries.forEach(function(name) {
+        var asset = htmlWebpackPlugin.files.js.find((chunk) => new RegExp(`^/${name}-.+`).test(chunk));
+        if (asset) { %>
+          <%= compilation.assets[asset.substring(htmlWebpackPlugin.files.publicPath.length).split('?')[0]].source() %>
+      <%  }
+      }) %>
+    </script>
+    <%= htmlWebpackPlugin.options.getConfig() %>
+    <% ['app', 'vendors'].forEach(function(name) { %>
+      <script type="text/javascript" src="<%=htmlWebpackPlugin.files.js.find((chunk) => new RegExp(`^${htmlWebpackPlugin.files.publicPath}${name}-.+`).test(chunk))%>"></script>
+    <% }) %>
+  </body>
+</html>

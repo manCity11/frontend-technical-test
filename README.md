@@ -16,56 +16,44 @@ In addition to your code, a README explaining your thought process and your choi
 
 **As your application can be used by millions of users, make sure to provide some robust safety guards.**
 
-### Sketches :
+# Getting started
+To begin to work, execute commands suites:
 
-Obvisouly, it is up to you to make something nice and pretty, you are free to design it the way you like. The sketches are here to give you an idea on how it should look.
+```
+npm i install
+npm i -g gulp
+```
 
-<details>
-  <summary>Click to see the sketches</summary>
-  
-Mobile list :
+# Available Scripts
+Project is built upon gulp orchestration. Check gulpfile.js to get all available commands (serve, e2e, test, lint)
 
-![](./sketches/list-mobile.jpg)
+## `npm run test`
 
-Desktop list :
+Launches the tests runner for the app.
 
-![](./sketches/list-desktop.jpg)
+## `npm run lint`
 
-Mobile conversation :
+Launches linter for styles (style-lint) and scripts (eslint) for the hole app
 
-![](./sketches/conv-mobile.jpg)
+## `gulp serve`
 
-Desktop conversation :
+Run the app in development mode.
+Use --env={dev|prod} flag to get desired config (default dev)
+[http://localhost:3000] to view it in the browser.
 
-![](./sketches/conv-desktop.jpg)
+## `gulp build`
 
-</details>
+Everything is built in `dist` readt to deploy on any web server.
 
-### API :
+## `gulp e2e`
 
-You can find the API swagger file in `docs/api-swagger.yaml`.
+Launches the e2e tests which executes test cases (desktop, mobile) and compares it to base snapshots, which are located in `e2e/cypress/snapshots/base`. Those snapshots should be generated we the same machine otherwise it may have differences between machines.
 
-For a better readibility, you can view it on [https://leboncoin.tech/frontend-technical-test/](https://leboncoin.tech/frontend-technical-test/).
-
----
-
-## Bonus 1 :
-
-We provide some conversation samples, but can you improve the app so the user can now create new conversations ?
-
-## Bonus 2 :
-
-Our infrastructure is a bit shaky.. Sometimes the servers are crashing. “It’s not you, it’s me”, but maybe you can display something nice to warn the user and handle it gracefully.
-
-## Do you want to make the app even better ?
-
-Feel free to make as many improvements as you like.
-We love creativity and technical challenges.
-
-If you are out of ideas, here are some thoughts :
-
-- As we want to reach our users anywhere, we need to make sure the app is performing well. What can you do to make it really fast ?
-
-- Our goal is to support everybody in the country, including people with disabilities. As a good citizen and a good developer, can you make sure the app is accessible for everyone ?
-
-- We all love to relax after a hard day’s work. It would be a shame if we didn’t feel confident enough about the upcoming automatic deployment. Are you sure everything has been tested thoroughly ?
+### Commands
+```
+  gulp e2e # start e2e tests
+  gulp e2e --init # start e2e test creating base snapshots
+  gulp e2e --ui # open cypress ui control panel to create test
+  gulp e2e --local # use local imagebase to check scennshots
+  gulp e2e --singleRun # to only run desktop tests
+```

@@ -1,0 +1,63 @@
+@import "../../../commons/ui-kit/styles/constants";
+
+.conversations-select {
+  &__notifications-container {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+  }
+
+  &__notifications_description {
+    align-self: center;
+  }
+
+  &__notifications_icons-container {
+    text-align: right;
+  }
+
+  .funnels-layout__button {
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  .conversations-container {
+    @include background("white");
+
+    border: 1px solid getColor("grey", "athensGray");
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    font-family: SanFrancisco;
+    font-size: 1.25rem;
+    margin: 0 auto 1rem;
+    max-width: 600px;
+    padding: .5rem 1.5rem;
+    margin-top: 10px;
+  }
+
+  .conversation {
+    display: flex;
+    height: 55px;
+    border: 1px solid getColor("grey", "alto");
+    margin: 10px 0;
+    padding: 0 5px;
+
+    &__sender {
+      flex: 1;
+    }
+
+    &__date {
+      @include color("grey", "sil");
+
+      flex: 1;
+      font-size: 1rem;
+    }
+
+    &__input-label {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+  }
+}

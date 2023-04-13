@@ -1,0 +1,49 @@
+@use "sass:map";
+
+$colors: (
+  "white": (
+    default: #ffffff,
+  ),
+  "grey": (
+    default: #808080,
+    sil: #cccccc,
+    athensGray: #e5e5ea,
+    dove: #666666,
+    bright: #3c4257,
+    alto: #dddddd,
+  ),
+  "red": (
+    default: #ff0000,
+    persimon: #ff6347,
+  ),
+  "black": (
+    default: #000000,
+  ),
+  "blue": (
+    default: #248bf5,
+  )
+);
+
+@function getColor($colorName, $colorVariant: "default", $alpha: 0) {
+  @if not map.has-key($colors, $colorName) {
+    @warn "Color `#{$colorName}` not defined. Returns `black` instead.";
+    $colorName: "black";
+  }
+
+  @if not map.has-key(map.get($colors, $colorName), $colorVariant) {
+    @warn "Color `#{$colorName}` and variant #{$colorVariant} not defined. Returns `black` instead.";
+    $colorName: "black";
+    $colorVariant: "default";
+  }
+
+  @return transparentize(map.get(map.get($colors, $colorName), $colorVariant), $alpha);
+}
+
+@mixin color($colorName, $colorVariant: "default", $alpha: 0) {
+  color: getColor($colorName, $colorVariant, $alpha);
+}
+
+@mixin background($colorName, $colorVariant: "default", $alpha: 0) {
+
+  background-color: getColor($colorName, $colorVariant, $alpha);
+}

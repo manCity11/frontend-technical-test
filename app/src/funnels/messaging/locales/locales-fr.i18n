@@ -1,0 +1,16 @@
+{
+  "messaging": {
+    "conversationSelect": {
+      "title": "Vos conversations",
+      "subtitle": "Voici la liste de vos conversations",
+      "nbMessages": "Vous avez { NB_CONVERSATIONS } conversations"
+    },
+    "conversationDetail": {
+      "title": "Votre conversation",
+      "subtitle": "Voici l'intégralité de votre échange"
+    },
+    "error": {
+      "title": "Une erreur est survenue"
+    }
+  }
+}

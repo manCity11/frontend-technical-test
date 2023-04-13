@@ -1,0 +1,57 @@
+@import "../../../commons/ui-kit/styles/constants";
+
+.conversation-detail {
+  .messages {
+    &__container {
+      @include background("white");
+      border: 1px solid getColor("grey", "athensGray");
+      border-radius: .25rem;
+      display: flex;
+      flex-direction: column;
+      font-family: SanFrancisco;
+      font-size: 1.25rem;
+      margin: 0 auto 1rem;
+      max-width: 600px;
+      padding: .5rem 1.5rem;
+    }
+  }
+
+  .messages-form {
+    &__submit {
+      display: flex;
+    }
+
+    &__input {
+      flex: 1;
+    }
+  }
+
+  .funnels-layout__button {
+    margin-left: 5px;
+  }
+
+  .message {
+    border-radius: 1.15rem;
+    line-height: 1.25;
+    max-width: 75%;
+    padding: .5rem .875rem;
+    position: relative;
+    word-wrap: break-word;
+    margin: .5rem 0;
+    width: fit-content;
+
+    &.other {
+      @include background("grey", "athensGray");
+      @include color("black");
+
+      align-items: flex-start;
+    }
+
+    &.me {
+      @include background("blue");
+      @include color("white");
+
+      align-self: flex-end;
+    }
+  }
+}

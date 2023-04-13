@@ -5,20 +5,20 @@
 /.pnp
 .pnp.js
 yarn.lock
+package-lock.json
 
 # testing
-/coverage
+coverage/
 
 # next.js
 /.next/
 /out/
 
-# production
-/build
-
 # misc
 .DS_Store
 *.pem
+.tmp/
+dist/
 
 # debug
 npm-debug.log*
@@ -36,3 +36,6 @@ yarn-error.log*
 
 # SWC
 .swc
+
+# e2e
+e2e/snapshots/base-local
